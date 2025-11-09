@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "cross-env": "^10.1.0"
+    "cross-env": "^10.1.0",
+    "eslint": "^8.44.0"
   }
 }
