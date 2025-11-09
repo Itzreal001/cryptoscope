@@ -1,23 +1,30 @@
 {
-  "name": "crypto-tool",
-  "version": "0.1.0",
+  "name": "cryptoscope",
+  "version": "1.0.0",
   "private": true,
+  "description": "A modern React-based crypto tracking and analysis tool.",
+  "author": "Israel Lawal (Saitama)",
+  "license": "MIT",
+"scripts": {
+  "start": "react-scripts start",
+  "build": "cross-env CI=false ESLINT_NO_DEV_ERRORS=true react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject",
+  "lint": "eslint src/**/*.{js,jsx}"
+},
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0",
     "@testing-library/react": "^16.3.0",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.5",
-    "react-scripts": "5.0.1",
+    "@testing-library/dom": "^10.4.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "eslint-config-react-app": "^7.0.1"
   },
   "eslintConfig": {
     "extends": [

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import "../styles/converter.css";
 
 const COINGECKO_MARKETS =
@@ -12,7 +12,8 @@ const FIAT_OPTIONS = [
 
 function formatNumber(n) {
   if (n === null || n === undefined || Number.isNaN(n)) return "–";
-  if (Math.abs(n) >= 1) return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  if (Math.abs(n) >= 1)
+    return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
   return n.toPrecision(6);
 }
 
@@ -21,7 +22,7 @@ const Converter = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const [fromType, setFromType] = useState("coin"); // 'coin' or 'fiat'
+  const [fromType, setFromType] = useState("coin");
   const [toType, setToType] = useState("fiat");
 
   const [fromCoin, setFromCoin] = useState(null);
@@ -42,13 +43,12 @@ const Converter = () => {
         if (aborted) return;
         setCoins(data || []);
         setLoading(false);
-        // default selections
         if (data && data.length > 0) {
           setFromCoin(data[0].id);
           setToCoin(data[1] ? data[1].id : data[0].id);
         }
       })
-      .catch((e) => {
+      .catch(() => {
         if (aborted) return;
         setError("Unable to load coin data. Try again later.");
         setLoading(false);
@@ -64,64 +64,74 @@ const Converter = () => {
     return m;
   }, [coins]);
 
-  const getPriceInUSD = (id) => {
-    if (!id) return null;
-    const c = coinMap[id];
-    return c ? c.current_price : null;
-  };
+  // ✅ FIX: Memoize getPriceInUSD to avoid missing dependency warning
+  const getPriceInUSD = useCallback(
+    (id) => {
+      if (!id) return null;
+      const c = coinMap[id];
+      return c ? c.current_price : null;
+    },
+    [coinMap]
+  );
 
-  // conversion logic: support coin↔coin, coin↔fiat, fiat↔fiat
   const result = useMemo(() => {
     const amt = parseFloat(amount) || 0;
-    // coin -> coin
+    const rates = { usd: 1, eur: 0.91, gbp: 0.78 };
+
     if (fromType === "coin" && toType === "coin") {
       const fromPrice = getPriceInUSD(fromCoin);
       const toPrice = getPriceInUSD(toCoin);
       if (fromPrice === null || toPrice === null) return null;
       const converted = (amt * fromPrice) / toPrice;
-      return { value: converted, unit: coinMap[toCoin]?.symbol?.toUpperCase() || toCoin };
+      return {
+        value: converted,
+        unit: coinMap[toCoin]?.symbol?.toUpperCase() || toCoin,
+      };
     }
 
-    // coin -> fiat
     if (fromType === "coin" && toType === "fiat") {
       const fromPrice = getPriceInUSD(fromCoin);
       if (fromPrice === null) return null;
-      // CoinGecko returned prices are in USD; for demo we'll convert USD->selected fiat using simple ratios
       const usdValue = amt * fromPrice;
-      // naive conversion rates (for UX) — in production use a forex API. We'll approximate using static rates.
-      const rates = { usd: 1, eur: 0.91, gbp: 0.78 };
       const converted = usdValue * (rates[toFiat] || 1);
       return { value: converted, unit: toFiat.toUpperCase() };
     }
 
-    // fiat -> coin
     if (fromType === "fiat" && toType === "coin") {
       const toPrice = getPriceInUSD(toCoin);
       if (toPrice === null) return null;
-      const rates = { usd: 1, eur: 0.91, gbp: 0.78 };
       const usdValue = amt * (rates[fromFiat] || 1);
       const converted = usdValue / toPrice;
-      return { value: converted, unit: coinMap[toCoin]?.symbol?.toUpperCase() || toCoin };
+      return {
+        value: converted,
+        unit: coinMap[toCoin]?.symbol?.toUpperCase() || toCoin,
+      };
     }
 
-    // fiat -> fiat
     if (fromType === "fiat" && toType === "fiat") {
-      const rates = { usd: 1, eur: 0.91, gbp: 0.78 };
       const converted = amt * ((rates[toFiat] || 1) / (rates[fromFiat] || 1));
       return { value: converted, unit: toFiat.toUpperCase() };
     }
 
     return null;
-  }, [amount, fromType, toType, fromCoin, toCoin, fromFiat, toFiat, coinMap]);
+  }, [
+    amount,
+    fromType,
+    toType,
+    fromCoin,
+    toCoin,
+    fromFiat,
+    toFiat,
+    coinMap,
+    getPriceInUSD,
+  ]);
 
   const handleSwap = () => {
-    // swap types and selections
     setFromType((prev) => {
       const newFromType = toType;
       setToType(prev);
       return newFromType;
     });
-    // swap selections
     setFromCoin((prevCoin) => {
       setToCoin(prevCoin);
       return toCoin;
@@ -136,7 +146,9 @@ const Converter = () => {
     <div className="converter-page">
       <div className="converter-card">
         <h2>Crypto & Fiat Converter</h2>
-        <p className="muted">Convert between cryptocurrencies and fiat currencies quickly.</p>
+        <p className="muted">
+          Convert between cryptocurrencies and fiat currencies quickly.
+        </p>
 
         {loading ? (
           <div className="loader">Loading coins…</div>
@@ -147,12 +159,18 @@ const Converter = () => {
             <div className="column">
               <label>From</label>
               <div className="row">
-                <select value={fromType} onChange={(e) => setFromType(e.target.value)}>
+                <select
+                  value={fromType}
+                  onChange={(e) => setFromType(e.target.value)}
+                >
                   <option value="coin">Cryptocurrency</option>
                   <option value="fiat">Fiat</option>
                 </select>
                 {fromType === "coin" ? (
-                  <select value={fromCoin || ""} onChange={(e) => setFromCoin(e.target.value)}>
+                  <select
+                    value={fromCoin || ""}
+                    onChange={(e) => setFromCoin(e.target.value)}
+                  >
                     {coins.map((c) => (
                       <option key={c.id} value={c.id}>
                         {c.name} ({c.symbol.toUpperCase()})
@@ -160,7 +178,10 @@ const Converter = () => {
                     ))}
                   </select>
                 ) : (
-                  <select value={fromFiat} onChange={(e) => setFromFiat(e.target.value)}>
+                  <select
+                    value={fromFiat}
+                    onChange={(e) => setFromFiat(e.target.value)}
+                  >
                     {FIAT_OPTIONS.map((f) => (
                       <option key={f.id} value={f.id}>
                         {f.name}
@@ -179,7 +200,11 @@ const Converter = () => {
                 onChange={(e) => setAmount(e.target.value)}
                 className="amount-input"
               />
-              <button className="swap-btn" onClick={handleSwap} title="Swap from/to">
+              <button
+                className="swap-btn"
+                onClick={handleSwap}
+                title="Swap from/to"
+              >
                 ⇅ Swap
               </button>
             </div>
@@ -187,12 +212,18 @@ const Converter = () => {
             <div className="column">
               <label>To</label>
               <div className="row">
-                <select value={toType} onChange={(e) => setToType(e.target.value)}>
+                <select
+                  value={toType}
+                  onChange={(e) => setToType(e.target.value)}
+                >
                   <option value="coin">Cryptocurrency</option>
                   <option value="fiat">Fiat</option>
                 </select>
                 {toType === "coin" ? (
-                  <select value={toCoin || ""} onChange={(e) => setToCoin(e.target.value)}>
+                  <select
+                    value={toCoin || ""}
+                    onChange={(e) => setToCoin(e.target.value)}
+                  >
                     {coins.map((c) => (
                       <option key={c.id} value={c.id}>
                         {c.name} ({c.symbol.toUpperCase()})
@@ -200,7 +231,10 @@ const Converter = () => {
                     ))}
                   </select>
                 ) : (
-                  <select value={toFiat} onChange={(e) => setToFiat(e.target.value)}>
+                  <select
+                    value={toFiat}
+                    onChange={(e) => setToFiat(e.target.value)}
+                  >
                     {FIAT_OPTIONS.map((f) => (
                       <option key={f.id} value={f.id}>
                         {f.name}
@@ -228,7 +262,8 @@ const Converter = () => {
           <div className="helper">
             {fromType === "coin" && (
               <small>
-                1 {coinMap[fromCoin]?.symbol?.toUpperCase()} = ${formatNumber(getPriceInUSD(fromCoin))} USD
+                1 {coinMap[fromCoin]?.symbol?.toUpperCase()} = $
+                {formatNumber(getPriceInUSD(fromCoin))} USD
               </small>
             )}
           </div>

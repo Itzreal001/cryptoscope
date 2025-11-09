@@ -30,11 +30,6 @@ const About = () => {
           </section>
         </div>
 
-        <div className="howto">
-          <h3>Getting started</h3>
-          <p>Run the client with <code>npm install</code> and <code>npm start</code> in the <code>client</code> folder. If using the included server, run <code>npm run dev</code> from <code>server</code> to enable a backend proxy endpoint.</p>
-        </div>
-
         <div className="contact">
           <h3>Notes</h3>
           <p>This app uses public APIs and sample conversion rates for demo purposes. For production use, integrate a dedicated FX rates provider and add API key management on the server.</p>
