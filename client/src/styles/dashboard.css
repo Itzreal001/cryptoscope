@@ -202,3 +202,13 @@
   .controls { justify-content: flex-start; flex-wrap: wrap }
   .spark { display: none }
 }
+@media (max-width: 768px) {
+  .crypto-grid {
+    grid-template-columns: 1fr;
+    justify-items: center; 
+  }
+
+  .crypto-card.pro {
+    width: 90%; 
+  }
+}
