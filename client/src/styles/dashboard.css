@@ -1,0 +1,204 @@
+/* Dashboard + Crypto card styles */
+.dashboard {
+  padding: 42px 32px;
+  color: #e6eef8;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #00c6ff;
+  font-size: 28px;
+}
+
+.muted {
+  color: #98a6b6;
+  margin: 8px 0 0 0;
+  font-size: 15px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #e6eef8;
+  min-width: 240px;
+  font-size: 14px;
+}
+
+.controls select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #e6eef8;
+  font-size: 14px;
+}
+
+.toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #9fb2c6;
+  font-size: 14px;
+}
+
+.refresh {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#074a62,#0f98c2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error {
+  color: #ffb4b4;
+  background: rgba(255,20,20,0.04);
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 42px; /* vertical horizontal */
+  padding: 4px;
+}
+
+@media (max-width: 1200px) {
+  .crypto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .crypto-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card (used by CryptoCard component) */
+.crypto-card.pro {
+  background: linear-gradient(180deg, #071023 0%, #0b1220 100%);
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.crypto-card.pro:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(2, 198, 255, 0.12);
+}
+
+.card-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.crypto-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+}
+
+.title .name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.title .symbol {
+  font-size: 12px;
+  color: #99b0c6;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.change-badge {
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.change-badge.up {
+  background: linear-gradient(90deg,#052b17,#063a22);
+  color: #2ef08f;
+}
+
+.change-badge.down {
+  background: linear-gradient(90deg,#3a0b0b,#4a0f0f);
+  color: #ff8b8b;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.spark {
+  width: 120px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+  text-align: right;
+}
+
+.stat .label {
+  font-size: 11px;
+  color: #92a9bf;
+}
+
+.stat .value {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .dashboard-header { flex-direction: column; align-items: stretch; gap: 12px }
+  .controls { justify-content: flex-start; flex-wrap: wrap }
+  .spark { display: none }
+}

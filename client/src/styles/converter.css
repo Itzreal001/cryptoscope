@@ -1,0 +1,190 @@
+/* Converter page styles - clean, responsive card */
+.converter-page {
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px;
+  min-height: calc(100vh - 60px); /* account for navbar */
+}
+
+.converter-card {
+  width: 100%;
+  max-width: 920px;
+  background: linear-gradient(180deg, #0f1724 0%, #071023 100%);
+  border-radius: 12px;
+  padding: 32px;
+  color: #e6eef8;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  overflow: visible;
+}
+
+.converter-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  color: #00c6ff;
+}
+
+.converter-card .muted {
+  color: #98a6b6;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.converter-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+
+.column {
+  min-width: 0; /* prevent overflow */
+  position: relative; /* for dropdown containment */
+}
+
+.column label {
+  display: block;
+  font-size: 13px;
+  color: #9fb2c6;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  position: relative;
+}
+
+/* Enhance select containers */
+.row select {
+  min-width: 0;
+  flex: 1;
+  max-width: 100%;
+}
+
+.row select:first-child {
+  width: 140px;
+  min-width: 140px;
+  flex: none;
+}
+
+/* Ensure dropdowns don't overflow */
+select {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add animation for dropdowns */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+select:focus {
+  animation: slideIn 0.2s ease-out;
+}
+select,
+.amount-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e6eef8;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2398a6b6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+select:hover,
+.amount-input:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+select:focus,
+.amount-input:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.15);
+}
+
+/* Style the dropdown options */
+select option {
+  background-color: #0f1724;
+  color: #e6eef8;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Fix dropdown positioning on mobile */
+@media (max-width: 720px) {
+  .row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .row select,
+  .row select:first-child {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.amount-col {
+  text-align: center;
+}
+
+.amount-input {
+  width: 100%;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: text;
+  background-image: none;
+  padding-right: 16px;
+}
+.swap-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.06);
+  color: #9fb2c6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.result-box {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 14px;
+  border-radius: 10px;
+}
+.result-label { color: #9fb2c6; font-size: 12px; }
+.result-value { margin-top: 8px; font-size: 22px; }
+.result-value .unit { color: #cfe7ff; margin-left: 6px; font-weight: 600; }
+.helper { margin-top: 6px; color: #8fa5bb; }
+
+.loader { padding: 20px; color: #9fb2c6 }
+.error { color: #ffb4b4; padding: 12px; background: rgba(255,20,20,0.04); border-radius: 8px }
+
+@media (max-width: 720px) {
+  .converter-grid { grid-template-columns: 1fr; }
+  .amount-col { order: 3; }
+}
