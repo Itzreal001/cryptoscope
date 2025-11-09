@@ -5,25 +5,26 @@
   "description": "A modern React-based crypto tracking and analysis tool.",
   "author": "Israel Lawal (Saitama)",
   "license": "MIT",
-"scripts": {
-  "start": "react-scripts start",
-  "build": "cross-env CI=false ESLINT_NO_DEV_ERRORS=true react-scripts build",
-  "test": "react-scripts test --env=jsdom",
-  "eject": "react-scripts eject",
-  "lint": "eslint src/**/*.{js,jsx}"
-},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx}"
+  },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.0.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/user-event": "^13.5.0",
     "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "eslint": "^9.14.0",
+    "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1"
   },
   "eslintConfig": {
