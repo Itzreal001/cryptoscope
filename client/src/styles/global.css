@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 body[data-theme="dark"] {
-=======
-:root[data-theme="dark"] {
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   --bg-primary: #070d16;
   --bg-secondary: #0f1724;
   --text-primary: #e6eef8;
@@ -17,11 +13,7 @@ body[data-theme="dark"] {
   --warning-color: #ff9800;
 }
 
-<<<<<<< HEAD
 body[data-theme="light"] {
-=======
-:root[data-theme="light"] {
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   --bg-primary: #f8f9fa;
   --bg-secondary: #ffffff;
   --text-primary: #1a1f36;
@@ -49,10 +41,7 @@ body[data-theme="light"] {
   align-items: center;
   z-index: 1000;
   padding: 20px;
-<<<<<<< HEAD
   overflow-y: auto;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .modal-content {
@@ -63,10 +52,7 @@ body[data-theme="light"] {
   max-width: 500px;
   max-height: 90vh;
   overflow-y: auto;
-<<<<<<< HEAD
   animation: fadeIn 0.3s ease-out;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .modal-header {
@@ -162,10 +148,7 @@ body[data-theme="light"] {
   height: 32px;
   border-radius: 50%;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 body {
   margin: 0;
   background: #0a0f16;
@@ -185,7 +168,6 @@ body {
 h2 {
   color: #00c6ff;
 }
-<<<<<<< HEAD
 
 /* Global animation for modals */
 @keyframes fadeIn {
@@ -216,5 +198,3 @@ h2 {
     transition-duration: 0.01ms !important;
   }
 }
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2

@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 /* Watchlist page styles */
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .watchlist-page {
   padding: 28px;
   max-width: 1200px;
@@ -26,15 +23,6 @@
   padding: 8px 16px;
   gap: 12px;
   min-width: 280px;
-<<<<<<< HEAD
-  transition: all 0.2s ease;
-}
-
-.search-bar:focus-within {
-  border-color: #00c6ff;
-  background: var(--input-bg, rgba(255, 255, 255, 0.08));
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .search-bar input {
@@ -88,15 +76,7 @@
 
 .add-btn:hover, .setup-btn:hover {
   background: var(--primary-hover, #00b2e6);
-<<<<<<< HEAD
-  transform: translateY(-2px);
-}
-
-.add-btn:active, .setup-btn:active {
-  transform: translateY(0);
-=======
   transform: translateY(-1px);
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .watchlist-grid {
@@ -105,68 +85,20 @@
   gap: 20px;
 }
 
-<<<<<<< HEAD
-/* Tablet view */
-@media (max-width: 1024px) {
-  .watchlist-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
-}
-
-/* Mobile view */
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 @media (max-width: 768px) {
   .watchlist-page {
     padding: 20px;
   }
-<<<<<<< HEAD
-
-  .watchlist-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-=======
   
   .watchlist-header {
     flex-direction: column;
     align-items: stretch;
   }
   
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   .search-bar {
     width: 100%;
     min-width: 0;
   }
-<<<<<<< HEAD
-
-  .watchlist-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-/* Small mobile view */
-@media (max-width: 480px) {
-  .watchlist-page {
-    padding: 16px 12px;
-  }
-
-  .empty-state {
-    padding: 40px 16px;
-  }
-
-  .empty-state .material-icons {
-    font-size: 40px;
-  }
-
-  .empty-state h3 {
-    font-size: 18px;
-  }
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 /* Modal overlay */
@@ -174,24 +106,14 @@
   position: fixed;
   top: 0;
   left: 0;
-<<<<<<< HEAD
-  right: 0;
-  bottom: 0;
-=======
   width: 100vw;
   height: 100vh;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
   backdrop-filter: blur(4px);
-<<<<<<< HEAD
-  padding: 20px;
-  overflow-y: auto;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 /* Modal box */
@@ -199,21 +121,12 @@
   background: var(--card-bg, #121826);
   border-radius: 16px;
   padding: 24px;
-<<<<<<< HEAD
-  width: 100%;
-  max-width: 500px;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.3s ease-out;
-=======
   width: 90%;
   max-width: 500px; /* ✅ This fixes the “too big” issue */
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   animation: fadeIn 0.25s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 /* Header inside modal */
@@ -235,24 +148,11 @@
   border: none;
   color: var(--text-muted, #aaa);
   cursor: pointer;
-<<<<<<< HEAD
-  transition: all 0.2s ease;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-=======
   transition: color 0.2s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .close-btn:hover {
   color: var(--primary-color, #00c6ff);
-<<<<<<< HEAD
-  background: rgba(255, 255, 255, 0.05);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 /* Coin list inside modal */
@@ -265,15 +165,6 @@
   color: var(--text-primary, #fff);
   outline: none;
   margin-bottom: 16px;
-<<<<<<< HEAD
-  transition: all 0.2s ease;
-}
-
-.coin-search input:focus {
-  border-color: #00c6ff;
-  background: var(--input-bg, rgba(255, 255, 255, 0.08));
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .coin-list {
@@ -292,40 +183,23 @@
   border-radius: 8px;
   background: var(--card-alt-bg, rgba(255, 255, 255, 0.05));
   cursor: pointer;
-<<<<<<< HEAD
-  transition: all 0.2s ease;
-=======
   transition: background 0.2s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .coin-list-item:hover {
   background: var(--hover-bg, rgba(255, 255, 255, 0.1));
-<<<<<<< HEAD
-  transform: translateX(4px);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .coin-list-info {
   display: flex;
   align-items: center;
   gap: 10px;
-<<<<<<< HEAD
-  flex: 1;
-  min-width: 0;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .coin-list-info img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-<<<<<<< HEAD
-  flex-shrink: 0;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .add-to-watchlist {
@@ -338,35 +212,18 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-<<<<<<< HEAD
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-=======
   transition: background 0.2s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .add-to-watchlist:hover {
   background: var(--primary-hover, #00b2e6);
-<<<<<<< HEAD
-  transform: scale(1.05);
-}
-
-.add-to-watchlist:active {
-  transform: scale(0.95);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 /* Animation for smooth appearance */
 @keyframes fadeIn {
   from {
     opacity: 0;
-<<<<<<< HEAD
-    transform: scale(0.95);
-=======
     transform: scale(0.96);
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   }
   to {
     opacity: 1;
@@ -374,47 +231,6 @@
   }
 }
 
-<<<<<<< HEAD
-/* Responsive modal on tablets */
-@media (max-width: 768px) {
-  .modal-content {
-    max-width: calc(100% - 40px);
-    max-height: 85vh;
-  }
-}
-
-/* Responsive modal on small mobile */
-@media (max-width: 480px) {
-  .modal {
-    padding: 12px;
-  }
-
-  .modal-content {
-    width: 100%;
-    max-width: none;
-    padding: 20px;
-    max-height: 90vh;
-  }
-
-  .modal-header h3 {
-    font-size: 18px;
-  }
-
-  .coin-search input {
-    font-size: 14px;
-  }
-
-  .coin-list-item {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .coin-list-info img {
-    width: 24px;
-    height: 24px;
-  }
-}
-=======
 /* Responsive modal */
 @media (max-width: 480px) {
   .modal-content {
@@ -423,4 +239,3 @@
     padding: 20px;
   }
 }
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2

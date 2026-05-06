@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/* Portfolio page styles */
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .portfolio-page {
   padding: 28px;
   max-width: 1200px;
@@ -12,7 +8,6 @@
   margin-bottom: 32px;
 }
 
-<<<<<<< HEAD
 .portfolio-header h2 {
   margin: 0 0 8px 0;
   color: #00c6ff;
@@ -25,8 +20,6 @@
   font-size: 15px;
 }
 
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .portfolio-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -39,25 +32,19 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-<<<<<<< HEAD
   transition: all 0.2s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(0, 198, 255, 0.1);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .stat-card h3 {
   color: var(--text-muted, #98a6b6);
   font-size: 14px;
   margin: 0 0 8px 0;
-<<<<<<< HEAD
   font-weight: 500;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .stat-card .value {
@@ -70,10 +57,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
-<<<<<<< HEAD
   margin-top: 24px;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .asset-card {
@@ -81,19 +65,12 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-<<<<<<< HEAD
   transition: all 0.2s ease;
-=======
-  transition: transform 0.2s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .asset-card:hover {
   transform: translateY(-2px);
-<<<<<<< HEAD
   box-shadow: 0 8px 30px rgba(0, 198, 255, 0.1);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .asset-header {
@@ -101,7 +78,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-<<<<<<< HEAD
   gap: 12px;
 }
 
@@ -112,8 +88,6 @@
   font-weight: 600;
   flex: 1;
   min-width: 0;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .edit-btn {
@@ -121,7 +95,6 @@
   border: none;
   color: var(--text-muted, #98a6b6);
   cursor: pointer;
-<<<<<<< HEAD
   padding: 6px;
   border-radius: 50%;
   transition: all 0.2s ease;
@@ -129,11 +102,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-=======
-  padding: 4px;
-  border-radius: 50%;
-  transition: all 0.2s ease;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .edit-btn:hover {
@@ -141,7 +109,6 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-<<<<<<< HEAD
 .delete-btn {
   background: transparent;
   border: none;
@@ -160,8 +127,6 @@
   background: rgba(244, 67, 54, 0.1);
 }
 
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .asset-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -203,7 +168,6 @@
   border-color: var(--primary-color, #00c6ff);
   color: var(--primary-color, #00c6ff);
   transform: translateY(-2px);
-<<<<<<< HEAD
   background: rgba(0, 198, 255, 0.02);
 }
 
@@ -223,15 +187,10 @@
 }
 
 /* Mobile view */
-=======
-}
-
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 @media (max-width: 768px) {
   .portfolio-page {
     padding: 20px;
   }
-<<<<<<< HEAD
 
   .portfolio-header h2 {
     font-size: 24px;
@@ -323,10 +282,5 @@
 
   .detail span {
     font-size: 11px;
-=======
-  
-  .portfolio-grid {
-    grid-template-columns: 1fr;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   }
 }

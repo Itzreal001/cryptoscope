@@ -10,11 +10,8 @@
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease;
-<<<<<<< HEAD
   flex-wrap: wrap;
   gap: 15px;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .logo {
@@ -22,14 +19,11 @@
   font-weight: 700;
   color: #00c6ff;
   letter-spacing: 1px;
-<<<<<<< HEAD
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .nav-links {
@@ -38,11 +32,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   flex: 1;
   justify-content: center;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .nav-links li {
@@ -58,10 +49,7 @@
   gap: 6px;
   font-weight: 500;
   transition: all 0.3s ease;
-<<<<<<< HEAD
   position: relative;
-=======
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .nav-links a:hover {
@@ -95,16 +83,10 @@
 
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
-<<<<<<< HEAD
   transform: rotate(20deg);
 }
 
 /* Tablet view */
-=======
-  transform: rotate(15deg);
-}
-
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 20px;
@@ -115,7 +97,6 @@
   }
 }
 
-<<<<<<< HEAD
 /* Mobile view */
 @media (max-width: 768px) {
   .navbar {
@@ -128,14 +109,6 @@
   .logo {
     text-align: center;
     order: 1;
-=======
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    text-align: center;
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   }
 
   .nav-links {
@@ -143,7 +116,6 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-<<<<<<< HEAD
     gap: 12px;
   }
 
@@ -181,13 +153,3 @@
     font-size: 18px;
   }
 }
-=======
-  }
-
-  .nav-right {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-}
->>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
