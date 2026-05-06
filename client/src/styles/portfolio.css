@@ -186,7 +186,6 @@
   }
 }
 
-/* Mobile view */
 @media (max-width: 768px) {
   .portfolio-page {
     padding: 20px;
