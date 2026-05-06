@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* Alerts page styles */
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .alerts-page {
   padding: 28px;
   max-width: 1200px;
@@ -9,6 +13,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 32px;
+<<<<<<< HEAD
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -17,6 +22,8 @@
   margin: 0;
   color: #00c6ff;
   font-size: 28px;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .add-alert-btn {
@@ -36,12 +43,16 @@
 
 .add-alert-btn:hover {
   background: var(--primary-hover, #00b2e6);
+<<<<<<< HEAD
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 198, 255, 0.2);
 }
 
 .add-alert-btn:active {
   transform: translateY(0);
+=======
+  transform: translateY(-1px);
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .alerts-grid {
@@ -88,11 +99,15 @@
 
 .setup-btn:hover {
   background: var(--primary-hover, #00b2e6);
+<<<<<<< HEAD
   transform: translateY(-2px);
 }
 
 .setup-btn:active {
   transform: translateY(0);
+=======
+  transform: translateY(-1px);
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .alert-card {
@@ -100,11 +115,16 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+<<<<<<< HEAD
   transition: all 0.2s ease;
+=======
+  transition: transform 0.2s ease;
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .alert-card:hover {
   transform: translateY(-2px);
+<<<<<<< HEAD
   box-shadow: 0 8px 30px rgba(0, 198, 255, 0.1);
 }
 
@@ -200,10 +220,15 @@
 }
 
 /* Mobile view */
+=======
+}
+
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 @media (max-width: 768px) {
   .alerts-page {
     padding: 20px;
   }
+<<<<<<< HEAD
 
   .alerts-header {
     flex-direction: column;
@@ -274,5 +299,13 @@
   .delete-btn {
     padding: 4px 8px;
     font-size: 11px;
+=======
+  
+  .alerts-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    text-align: center;
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   }
 }

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* Dashboard + Crypto card styles */
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 .dashboard {
   padding: 42px 32px;
   color: #e6eef8;
@@ -12,7 +16,10 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 32px;
+<<<<<<< HEAD
   flex-wrap: wrap;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .dashboard-header h2 {
@@ -31,7 +38,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   flex-wrap: wrap;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .search {
@@ -42,6 +52,7 @@
   color: #e6eef8;
   min-width: 240px;
   font-size: 14px;
+<<<<<<< HEAD
   transition: all 0.2s ease;
 }
 
@@ -49,6 +60,8 @@
   outline: none;
   border-color: #00c6ff;
   background: rgba(255,255,255,0.05);
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .controls select {
@@ -58,6 +71,7 @@
   background: rgba(255,255,255,0.02);
   color: #e6eef8;
   font-size: 14px;
+<<<<<<< HEAD
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -66,6 +80,8 @@
   outline: none;
   border-color: #00c6ff;
   background: rgba(255,255,255,0.05);
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .toggle {
@@ -85,6 +101,7 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
+<<<<<<< HEAD
   transition: all 0.2s ease;
 }
 
@@ -95,6 +112,8 @@
 
 .refresh:active {
   transform: translateY(0);
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .error {
@@ -103,7 +122,10 @@
   padding: 14px;
   border-radius: 8px;
   margin-bottom: 16px;
+<<<<<<< HEAD
   border: 1px solid rgba(255, 20, 20, 0.1);
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .crypto-grid {
@@ -113,6 +135,7 @@
   padding: 4px;
 }
 
+<<<<<<< HEAD
 /* Tablet view - 2 columns */
 @media (max-width: 1200px) {
   .crypto-grid {
@@ -177,6 +200,17 @@
 
   .controls select {
     font-size: 13px;
+=======
+@media (max-width: 1200px) {
+  .crypto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .crypto-grid {
+    grid-template-columns: 1fr;
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   }
 }
 
@@ -187,7 +221,11 @@
   padding: 14px;
   width: 100%;
   box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+<<<<<<< HEAD
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+=======
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -210,7 +248,10 @@
   border-radius: 8px;
   background: rgba(255,255,255,0.02);
   padding: 6px;
+<<<<<<< HEAD
   flex-shrink: 0;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .title .name {
@@ -227,8 +268,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   gap: 12px;
   flex-wrap: wrap;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .price {
@@ -241,7 +285,10 @@
   border-radius: 8px;
   font-weight: 600;
   font-size: 13px;
+<<<<<<< HEAD
   white-space: nowrap;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .change-badge.up {
@@ -259,12 +306,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   flex-wrap: wrap;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .spark {
   width: 120px;
+<<<<<<< HEAD
   flex-shrink: 0;
+=======
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
 }
 
 .stats {
@@ -285,6 +338,7 @@
   font-size: 13px;
 }
 
+<<<<<<< HEAD
 /* Hide sparkline on tablets and below */
 @media (max-width: 768px) {
   .spark {
@@ -305,3 +359,10 @@
     font-size: 12px;
   }
 }
+=======
+@media (max-width: 720px) {
+  .dashboard-header { flex-direction: column; align-items: stretch; gap: 12px }
+  .controls { justify-content: flex-start; flex-wrap: wrap }
+  .spark { display: none }
+}
+>>>>>>> 0ade6d006840bdd13b5bbd592f854031b25856d2
